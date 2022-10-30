@@ -1,69 +1,79 @@
 body {
-  background-color: rgb(28, 37, 18);
-  background-image: url("assets/parallax/banner.png"), url("assets/parallax/tree foreground.png"), url("assets/parallax/ground & player.png"), url("assets/parallax/tree & bush.png"), url("assets/parallax/trees & bushes.png"), url("assets/parallax/background 1.png"), url("assets/parallax/background 2.png");
-  background-repeat: no-repeat, no-repeat, repeat-x, no-repeat, no-repeat, repeat-x, repeat-x;
-  background-position: center, 81% 50%, 50% 105%, 110% -50%, -50% -50%, 50% -40%, center;
-  background-size: auto, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 120%;
+    background-color: rgb(27.8, 36.5, 18.4);
+    background-image:
+    url("assets/parallax/banner.png"),
+    url("assets/parallax/tree foreground.png"),
+    url("assets/parallax/ground & player.png"),
+    url("assets/parallax/tree & bush.png"),
+    url("assets/parallax/trees & bushes.png"),
+    url("assets/parallax/background 1.png"),
+    url("assets/parallax/background 2.png");
+    background-repeat: no-repeat, no-repeat, repeat-x, no-repeat, no-repeat, repeat-x, repeat-x;
+    background-position: center, 81% 50%, 50% 105%, 110% -50%, -50% -50%, 50% -40%, center;
+    background-size: auto, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 120%;
 }
 
 .shell {
-  max-width: 2000px;
-  padding: 0 10px;
-  margin: auto;
+    max-width: 2000px;
+    padding: 0 10px;
+    margin: auto;
 }
 
-header .header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-header #logo {
-  max-width: 200px;
-}
-header .nav-list {
-  margin-top: 12px;
-  display: inline-flex;
-  -moz-column-gap: 15px;
-       column-gap: 15px;
-  list-style: none;
-}
-header .nav-list img {
-  max-height: 16px;
-}
-header img:hover {
-  filter: drop-shadow(0px 0px 5px rgb(208, 255, 0));
-}
-header img {
-  transition: filter 0.2s;
+header {
+    .header__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    #logo {
+        max-width: 200px;
+    }
+    .nav-list {
+        margin-top: 12px;
+        display: inline-flex;
+        column-gap: 15px;
+        list-style: none;
+        img {
+            max-height: 16px;
+        }
+    }
+
+    img:hover {
+        filter: drop-shadow(0px 0px 5px rgb(208, 255, 0));
+    }
+    img {
+        transition: filter 0.2s;
+    }
 }
 
 footer {
-  box-shadow: 0px 0px 80px 80px black;
-  background-color: black;
-  position: absolute;
-  z-index: 100;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  min-height: 60px;
+    box-shadow: 0px 0px 80px 80px black;
+    background-color: black;
+    position: absolute;
+    z-index: 100;
+    left: 0; right: 0;
+    bottom: 0;
+    min-height: 60px;
 }
 
 @media (orientation: portrait) {
-  body {
-    background-position: center, 120% 50%, 50% 105%, -500% -50%, 150% -50%, 50% -40%, center;
-    background-size: 70%, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 120%;
-  }
-  .nav-list {
-    flex-direction: column;
-    row-gap: 5px;
-  }
-  header #logo {
-    max-width: 40%;
-  }
-  header .nav-list {
-    margin-top: 20px;
-  }
-  header .nav-list img {
-    max-height: 100%;
-  }
-}/*# sourceMappingURL=style.css.map */
+    body {
+        background-position: center, 120% 50%, 50% 105%, -500% -50%, 150% -50%, 50% -40%, center;
+        background-size: 70%, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 120%;
+    }
+    .nav-list {
+        flex-direction: column;
+        row-gap: 5px;
+    }
+    header {
+        #logo {
+            max-width: 40%;
+        }
+        .nav-list {
+            margin-top: 20px;
+            img {
+                max-height: 100%;
+            }
+        }
+    }
+}
