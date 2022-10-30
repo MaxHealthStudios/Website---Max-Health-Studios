@@ -60,4 +60,10 @@ footer {
   header #logo {
     max-width: 40%;
   }
+  header .nav-list {
+    margin-top: 20px;
+  }
+  header .nav-list img {
+    max-height: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
