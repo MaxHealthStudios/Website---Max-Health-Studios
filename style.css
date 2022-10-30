@@ -18,7 +18,7 @@ header .header__inner {
   align-items: flex-start;
 }
 header #logo {
-  max-width: 200px;
+  max-width: 40%;
 }
 header .nav-list {
   margin-top: 12px;
