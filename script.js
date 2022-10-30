@@ -1,5 +1,7 @@
 const bodyEl = document.querySelector("body");
 addEventListener("mousemove", parallax);
+addEventListener("touchmove", parallax);
+
 function parallax (el) {
     //Offsets need to return values from -1 to 1 so they can ignore zooming
     const xOffset = (el.pageX - window.innerWidth/2)/(window.innerWidth/2);
