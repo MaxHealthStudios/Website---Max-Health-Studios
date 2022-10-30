@@ -26,7 +26,7 @@ header {
         align-items: flex-start;
     }
     #logo {
-        max-width: 40%;
+        max-width: 200px;
     }
     .nav-list {
         margin-top: 12px;
@@ -64,5 +64,10 @@ footer {
     .nav-list {
         flex-direction: column;
         row-gap: 5px;
+    }
+    header {
+        #logo {
+            max-width: 40%;
+        }
     }
 }
