@@ -10,7 +10,7 @@ body {
     url("assets/parallax/background 2.png");
     background-repeat: no-repeat, no-repeat, repeat-x, no-repeat, no-repeat, repeat-x, repeat-x;
     background-position: center, 81% 50%, 50% 105%, 110% -50%, -50% -50%, 50% -40%, center;
-    background-size: auto, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 100%;
+    background-size: auto, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 120%;
 }
 
 .shell {
@@ -34,7 +34,7 @@ header {
         column-gap: 15px;
         list-style: none;
         img {
-            max-height: 18px;
+            max-height: 16px;
         }
     }
 
@@ -59,7 +59,7 @@ footer {
 @media (orientation: portrait) {
     body {
         background-position: center, 120% 50%, 50% 105%, -500% -50%, 150% -50%, 50% -40%, center;
-        background-size: 70%, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 100%;
+        background-size: 70%, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 120%;
     }
     .nav-list {
         flex-direction: column;
