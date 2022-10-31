@@ -14,66 +14,159 @@ body {
 }
 
 .shell {
-    max-width: 2000px;
+    max-width: 3000px;
     padding: 0 10px;
     margin: auto;
 }
 
 header {
     .header__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    #logo {
-        max-width: 200px;
-    }
-    .nav-list {
-        margin-top: 12px;
-        display: inline-flex;
-        column-gap: 15px;
-        list-style: none;
-        img {
-            max-height: 16px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        .header__left {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        .header__right {
+            display: flex;
+            justify-content: right;
+            align-items: center;
         }
     }
 
-    img:hover {
+    //LOGO
+    #button-logo {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: filter 0.15s;
+    }
+    #button-logo:hover {
         filter: drop-shadow(0px 0px 5px rgb(208, 255, 0));
     }
-    img {
-        transition: filter 0.2s;
+    //STEAM
+    #anchor-steam {
+        transition: filter 0.15s;
     }
+    #anchor-steam:hover {
+        filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 1));
+    }
+}
+
+#company-info {
+    position: fixed;
+    z-index: 100;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-width: 80%;
+    padding: 15px;
+    
+    box-shadow: 0px 0px 20px 20px black;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 18pt;
+    font-weight: 100;
+    text-align: justify;
+    color: white;
+
+    opacity: 0;
+    pointer-events: none;
+
+    span {
+        text-transform: capitalize;
+        font-size: 20pt;
+    }
+
+    .button-close {
+        padding: 0;
+        position: absolute;
+        right: -20px;
+        top: -10px;
+        transform: translate(-50%, -50%);
+        background: none;
+        border: none;
+        font-size: 30pt;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: filter 0.15s;
+    }
+    .button-close:hover {
+        filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 1));
+    }
+}
+#company-info.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#overlay {
+    position: fixed;
+    z-index: 99;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: 200ms ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+#overlay.active {
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    pointer-events: all;
 }
 
 footer {
     box-shadow: 0px 0px 80px 80px black;
     background-color: black;
     position: absolute;
-    z-index: 100;
+    z-index: 90;
     left: 0; right: 0;
     bottom: 0;
-    min-height: 60px;
+
+    .footer__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .footer__left {
+            display: flex;
+            background-color: lightblue;
+            justify-content: left;
+            align-items: center;
+        }
+        .footer__mid {
+            display: flex;
+            background-color: lightpink;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer__right {
+            display: flex;
+            background-color: lightblue;
+            justify-content: right;
+            align-items: center;
+        }
+    }
 }
 
 @media (orientation: portrait) {
     body {
+        overflow-y: hidden;
         background-position: center, 120% 50%, 50% 105%, -500% -50%, 150% -50%, 50% -40%, center;
         background-size: 70%, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 120%;
     }
-    .nav-list {
-        flex-direction: column;
-        row-gap: 5px;
-    }
-    header {
-        #logo {
-            max-width: 40%;
-        }
-        .nav-list {
-            margin-top: 20px;
-            img {
-                max-height: 100%;
-            }
+
+    #company-info {
+        font-size: 5vw;
+        span {
+            font-size: 5vw;
         }
     }
 }
