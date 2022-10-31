@@ -1,7 +1,7 @@
+//PARALLAX
 const bodyEl = document.querySelector("body");
 addEventListener("mousemove", parallax);
 addEventListener("touchmove", parallax);
-
 function parallax (el) {
     //Offsets need to return values from -1 to 1 so they can ignore zooming
     const xOffset = (el.pageX - window.innerWidth/2)/(window.innerWidth/2);
@@ -17,3 +17,22 @@ function parallax (el) {
     bodyEl.style.transition = "background-position 0.05s";
     bodyEl.style.backgroundPosition = `${center}, ${tree}, ${ground}, ${treeBush}, ${treesBushes}, ${bg1}, center`;
 }
+
+//LOGO BUTTON
+const logoBtn = document.getElementById("button-logo");
+const closeBtn = document.getElementById("button-close");
+const overlay = document.getElementById("overlay");
+const popUp = document.getElementById("company-info");
+
+logoBtn.addEventListener("click", function() {
+    overlay.classList.add("active");
+    popUp.classList.add("active");
+})
+closeBtn.addEventListener("click", function() {
+    overlay.classList.remove("active");
+    popUp.classList.remove("active");
+})
+overlay.addEventListener("click", function() {
+    overlay.classList.remove("active");
+    popUp.classList.remove("active");
+})
