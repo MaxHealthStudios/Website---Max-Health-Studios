@@ -36,3 +36,44 @@ overlay.addEventListener("click", function() {
     overlay.classList.remove("active");
     popUp.classList.remove("active");
 })
+
+//TRAILER RESIZE
+const embedEl = document.getElementById("embed-el");
+addEventListener("resize", function() {
+    const calculatedHeight = embedEl.clientWidth / 1.777777777777778;
+    embedEl.height = calculatedHeight;
+})
+
+//TRAILER BUTTONS
+const trailerBtn = document.getElementById("button-trailer");
+const closeTrailer = document.getElementById("button-close-trailer");
+const popUpTrailer = document.getElementById("trailer-container");
+
+trailerBtn.addEventListener("click", function() {
+    const calculatedHeight = embedEl.clientWidth / 1.777777777777778;
+    embedEl.height = calculatedHeight;
+    overlay.classList.add("active");
+    popUpTrailer.classList.add("active");
+})
+closeTrailer.addEventListener("click", function() {
+    overlay.classList.remove("active");
+    popUpTrailer.classList.remove("active");
+    stopTrailer();
+})
+overlay.addEventListener("click", function() {
+    overlay.classList.remove("active");
+    popUpTrailer.classList.remove("active");
+    stopTrailer();
+})
+
+function stopTrailer () {
+    var videos = document.querySelectorAll('iframe, video');
+    Array.prototype.forEach.call(videos, function (video) {
+		if (video.tagName.toLowerCase() === 'video') {
+			video.pause();
+		} else {
+			var src = video.src;
+			video.src = src;
+		}
+	});
+}
