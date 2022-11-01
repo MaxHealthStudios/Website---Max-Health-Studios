@@ -227,8 +227,12 @@ footer {
 }
 
 @media (orientation: portrait) {
-    body {
+    html, body {
         overflow-y: hidden;
+    }
+
+    body {
+        position: relative;
         background-position: center, 120% 50%, 50% 105%, -500% -50%, 150% -50%, 50% -40%, center;
         background-size: 70%, auto 100%, auto 40%, auto 90%, auto 90%, auto 90%, auto 120%;
     }
