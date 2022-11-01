@@ -87,7 +87,45 @@ header #anchor-steam:hover {
   filter: drop-shadow(0px 0px 3px rgb(255, 255, 255));
 }
 
-#company-info.active {
+#trailer-container {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3840px;
+  max-width: 80%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 18pt;
+  font-weight: 100;
+  text-align: justify;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+}
+#trailer-container span {
+  text-transform: capitalize;
+  font-size: 20pt;
+}
+#trailer-container .button-close-trailer {
+  padding: 0;
+  position: absolute;
+  right: -3.5%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  font-size: 30pt;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+#trailer-container .button-close-trailer:hover {
+  filter: drop-shadow(0px 0px 3px rgb(255, 255, 255));
+}
+
+#company-info.active, #trailer-container.active {
   opacity: 1;
   pointer-events: all;
 }
@@ -127,21 +165,44 @@ footer .footer__inner {
 }
 footer .footer__inner .footer__left {
   display: flex;
-  background-color: lightblue;
   justify-content: left;
   align-items: center;
 }
+footer .footer__inner .footer__left #button-trailer {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+footer .footer__inner .footer__left #button-trailer:hover {
+  filter: drop-shadow(0px 0px 5px rgb(208, 255, 0));
+}
 footer .footer__inner .footer__mid {
   display: flex;
-  background-color: lightpink;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+footer .footer__inner .footer__mid img {
+  cursor: pointer;
+  max-height: 50px;
+  filter: grayscale(100%);
+  transition: filter 0.2s;
+}
+footer .footer__inner .footer__mid img:hover {
+  filter: grayscale(0%);
 }
 footer .footer__inner .footer__right {
   display: flex;
-  background-color: lightblue;
   justify-content: right;
   align-items: center;
+}
+footer .footer__inner .footer__right img {
+  transition: filter 0.15s;
+}
+footer .footer__inner .footer__right img:hover {
+  filter: drop-shadow(0px 0px 5px rgb(208, 255, 0));
 }
 
 @media (orientation: portrait) {
@@ -155,5 +216,8 @@ footer .footer__inner .footer__right {
   }
   #company-info span {
     font-size: 5vw;
+  }
+  footer .footer__inner .footer__mid img {
+    max-height: 3.5vh;
   }
 }/*# sourceMappingURL=style.css.map */
